@@ -1,0 +1,33 @@
+{
+  "name": "vouch-mcp",
+  "version": "1.0.0",
+  "description": "Evaluate AI agent plans before they execute. Returns ACCEPTED, RESTRICTED, or BLOCKED. Powered by Vouch.",
+  "main": "src/index.js",
+  "bin": {
+    "vouch-mcp": "src/index.js"
+  },
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "mcp",
+    "ai-safety",
+    "ai-governance",
+    "agent-security",
+    "guardrails",
+    "owasp",
+    "vouch",
+    "model-context-protocol"
+  ],
+  "author": "Atlas with Iris <jordan@atlaswithiris.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atlas-with-iris/vouch-mcp"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "zod": "^3.24.0"
+  }
+}
