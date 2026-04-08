@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="vGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="35%" stop-color="#50B4FF"/>
+      <stop offset="65%" stop-color="#B464FF"/>
+      <stop offset="100%" stop-color="#00C853"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="strandGlow">
+      <feGaussianBlur stdDeviation="4"/>
+    </filter>
+    <!-- Clip to rounded rect so strands don't overflow -->
+    <clipPath id="roundClip">
+      <rect width="512" height="512" rx="96"/>
+    </clipPath>
+  </defs>
+
+  <!-- Dark background -->
+  <rect width="512" height="512" rx="96" fill="#0a0a0f"/>
+
+  <!-- All strands clipped to the rounded rect -->
+  <g clip-path="url(#roundClip)">
+    <!-- Cyan strand - top left to bottom right -->
+    <line x1="0" y1="80" x2="400" y2="512" stroke="#00E5FF" stroke-width="3" filter="url(#strandGlow)" opacity="0.5"/>
+    <line x1="0" y1="80" x2="400" y2="512" stroke="#00E5FF" stroke-width="1.5" opacity="0.9"/>
+
+    <!-- Purple strand - top right to bottom left -->
+    <line x1="512" y1="60" x2="100" y2="512" stroke="#B464FF" stroke-width="3" filter="url(#strandGlow)" opacity="0.5"/>
+    <line x1="512" y1="60" x2="100" y2="512" stroke="#B464FF" stroke-width="1.5" opacity="0.9"/>
+
+    <!-- Green strand - bottom left to upper right -->
+    <line x1="0" y1="440" x2="512" y2="120" stroke="#00C853" stroke-width="3" filter="url(#strandGlow)" opacity="0.45"/>
+    <line x1="0" y1="440" x2="512" y2="120" stroke="#00C853" stroke-width="1.5" opacity="0.8"/>
+
+    <!-- Orange strand - full corner to corner -->
+    <line x1="0" y1="0" x2="512" y2="512" stroke="#FF8C32" stroke-width="3" filter="url(#strandGlow)" opacity="0.45"/>
+    <line x1="0" y1="0" x2="512" y2="512" stroke="#FF8C32" stroke-width="1.5" opacity="0.8"/>
+  </g>
+
+  <!-- V with gradient + glow -->
+  <text x="256" y="350" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="300" fill="url(#vGrad)" filter="url(#glow)">V</text>
+</svg>
